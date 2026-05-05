@@ -34,13 +34,13 @@ const directionMap: Record<Direction, Point> = {
 const SnakeGame = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [snake, setSnake] = useState<Point[]>(INITIAL_SNAKE);
-  const [direction, setDirection] = useState<Direction>('ArrowRight');
+  const [direction, setDirection] = useState<Direction>('Right');
   const [apple, setApple] = useState<Point>(() => getRandomPoint(INITIAL_SNAKE));
   const [score, setScore] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [gameOver, setGameOver] = useState(false);
 
-  const nextDirection = useRef<Direction>('ArrowRight');
+  const nextDirection = useRef<Direction>('Right');
   const intervalRef = useRef<number | null>(null);
 
   const draw = (snakeCells: Point[], appleCell: Point) => {
@@ -73,8 +73,8 @@ const SnakeGame = () => {
 
   const resetGame = () => {
     setSnake(INITIAL_SNAKE);
-    setDirection('ArrowRight');
-    nextDirection.current = 'ArrowRight';
+    setDirection('Right');
+    nextDirection.current = 'Right';
     setApple(getRandomPoint(INITIAL_SNAKE));
     setScore(0);
     setGameOver(false);
