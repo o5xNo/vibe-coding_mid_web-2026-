@@ -4,10 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>吳丞恩的網站</title>
-    <meta name="description" content="React+TypeScript 個人網站，包含網站介紹、個人簡介與貪吃蛇小遊戲。" />
+    <meta
+      name="description"
+      content="純 HTML/CSS/JS 個人網站，包含網站介紹、個人簡介與貪吃蛇小遊戲。"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">個人網站作品</p>
+          <h1>吳丞恩的靜態個人網站</h1>
+          <p class="hero-copy">
+            這是一個純 HTML/CSS/JS 製作的網站，包含網站介紹、個人簡介，以及貪吃蛇小遊戲。
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <section id="about" class="section-card">
+          <h2>網站介紹</h2>
+          <p>
+            歡迎來到我的網站！我使用純靜態前端技術，不依賴 npm 或框架，直接在瀏覽器中執行。
+          </p>
+          <p>
+            這個作品示範了如何透過原生 DOM、Canvas 與 CSS 來建立互動式頁面，並且支援 GitHub Pages 直接部署。
+          </p>
+          <ul>
+            <li>純 HTML / CSS / JavaScript</li>
+            <li>可直接透過 GitHub Pages 開啟</li>
+            <li>包含文字內容與遊戲互動</li>
+          </ul>
+        </section>
+
+        <section id="profile" class="section-card">
+          <h2>個人簡介</h2>
+          <div class="profile-grid">
+            <div class="profile-item">
+              <strong>姓名</strong>
+              <span>吳丞恩</span>
+            </div>
+            <div class="profile-item">
+              <strong>來自</strong>
+              <span>雲林</span>
+            </div>
+            <div class="profile-item">
+              <strong>興趣</strong>
+              <span>打遊戲</span>
+            </div>
+            <div class="profile-item">
+              <strong>求學軌跡</strong>
+              <span>飛沙國小 / 飛沙國中 / 文生高中 / 金門大學 (目前) / 雲林科技大學資工所 (未來)</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="snake" class="section-card">
+          <div class="snake-wrapper">
+            <div class="game-panel">
+              <h2>小遊戲：貪吃蛇</h2>
+              <p class="game-desc">
+                使用 WASD 或方向鍵操控蛇，吃掉紅色果實得分。若咬到自己，遊戲就會結束。
+              </p>
+              <div class="game-info">
+                <span id="score">分數: 0</span>
+                <span id="status">狀態: 準備中</span>
+              </div>
+              <div class="game-actions">
+                <button id="reset-button" class="primary" type="button">開始 / 重新開始</button>
+                <button id="pause-button" class="secondary" type="button">暫停</button>
+              </div>
+            </div>
+            <canvas id="snake-canvas" width="396" height="396" aria-label="貪吃蛇遊戲畫布"></canvas>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>建立於純 HTML、CSS、JavaScript。可直接上傳到 GitHub Pages。</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
