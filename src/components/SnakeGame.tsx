@@ -123,6 +123,8 @@ const SnakeGame = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (!isRunning) return;
+
       const key = event.key;
       const next = (() => {
         switch (key) {
@@ -165,7 +167,7 @@ const SnakeGame = () => {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [isRunning]);
 
   const instructions = useMemo(
     () => '使用方向鍵操作，吃掉紅色果實即可得分。撞到自己會遊戲結束。',
